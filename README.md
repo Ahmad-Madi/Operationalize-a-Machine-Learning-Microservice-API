@@ -2,12 +2,17 @@
 
 ## Project Summary 
 
-This project is an implimentation of "Microservices at Scale using AWS & Kubernetes" course contents where we can apply concepts like containerizing an existing application and deploy it using kubernetes and automatically lint and load test the application before the deployment using CicleCI.
+This project is an implementation of "Microservices at Scale using AWS & Kubernetes" course contents where we can apply concepts like containerizing an existing application and deploy it using kubernetes and automatically lint and load test the application before the deployment using CicleCI.
 
 
 ## Instructions to run the project
 
-1. Before you run the following command, make sure you follow minikube installation instructions [here](https://minikube.sigs.k8s.io/docs/start/) then run this command to create a local kubernetes cluster:
+Before you run the following commands, make sure to download the following:
+- docker installation [here](https://docs.docker.com/get-docker/)
+- minikube installation [here](https://minikube.sigs.k8s.io/docs/start/) to install kubernetes
+- kubectl installation [here](https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-on-linux)
+
+1. Run this command to create a local kubernetes cluster:
 ```
 minikube start
 ```
