@@ -2,7 +2,7 @@
 
 ## Project Summary 
 
-This project is an implementation of "Microservices at Scale using AWS & Kubernetes" course contents where we can apply concepts like containerizing an existing application and deploy it using kubernetes and automatically lint and load test the application before the deployment using CicleCI.
+This project is an implementation of "Microservices at Scale using AWS & Kubernetes" course contents where we can apply concepts like containerizing an existing application and deploy it using kubernetes and automatically lint and load test the application before the deployment using CircleCI.
 
 
 ## Instructions to run the project
