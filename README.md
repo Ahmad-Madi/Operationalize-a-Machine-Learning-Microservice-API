@@ -1,4 +1,4 @@
-[![Udacity](https://circleci.com/<VCS>/<ORG_NAME>/<PROJECT_NAME>.svg?style=svg)](https://app.circleci.com/pipelines/github/Ahmad-Madi/Operationalize-a-Machine-Learning-Microservice-API.)
+[![Udacity](https://circleci.com/gh/CircleCI-Public/circleci-cli.svg?style=svg)](https://app.circleci.com/pipelines/github/Ahmad-Madi/Operationalize-a-Machine-Learning-Microservice-API.)
 
 ## Project Overview
 
