@@ -1,42 +1,41 @@
 [![Udacity](https://circleci.com/gh/CircleCI-Public/circleci-cli.svg?style=svg)](https://app.circleci.com/pipelines/github/Ahmad-Madi/Operationalize-a-Machine-Learning-Microservice-API.)
 
-## Project Overview
+## Project Summary 
 
-In this project, you will apply the skills you have acquired in this course to operationalize a Machine Learning Microservice API. 
+This project is an implimentation of "Microservices at Scale using AWS & Kubernetes" course contents where we can apply concepts like containerizing an existing application and deploy it using kubernetes and automatically lint and load test the application before the deployment using CicleCI.
 
-You are given a pre-trained, `sklearn` model that has been trained to predict housing prices in Boston according to several features, such as average rooms in a home and data about highway access, teacher-to-pupil ratios, and so on. You can read more about the data, which was initially taken from Kaggle, on [the data source site](https://www.kaggle.com/c/boston-housing). This project tests your ability to operationalize a Python flask app—in a provided file, `app.py`—that serves out predictions (inference) about housing prices through API calls. This project could be extended to any pre-trained machine learning model, such as those for image recognition and data labeling.
 
-### Project Tasks
+## Instructions to run the project
 
-Your project goal is to operationalize this working, machine learning microservice using [kubernetes](https://kubernetes.io/), which is an open-source system for automating the management of containerized applications. In this project you will:
-* Test your project code using linting
-* Complete a Dockerfile to containerize this application
-* Deploy your containerized application using Docker and make a prediction
-* Improve the log statements in the source code for this application
-* Configure Kubernetes and create a Kubernetes cluster
-* Deploy a container using Kubernetes and make a prediction
-* Upload a complete Github repo with CircleCI to indicate that your code has been tested
+1. Before you run the following command, make sure you follow minikube installation instructions [here](https://minikube.sigs.k8s.io/docs/start/) then run this command to create a local kubernetes cluster:
+```
+minikube start
+```
 
-You can find a detailed [project rubric, here](https://review.udacity.com/#!/rubrics/2576/view).
+2. Deploy the application in a kubernetes Pod:
+```
+./run_kubernetes.sh
+```
 
-**The final implementation of the project will showcase your abilities to operationalize production microservices.**
+3. Now the app is running and listening on the configured port 80, to make a prediction, run the following command:
+```
+./make_prediction2.sh
+```
 
----
+4. After you finish, delete the cluster:
+```
+minikube delete
+```
 
-## Setup the Environment
 
-* Create a virtualenv and activate it
-* Run `make install` to install the necessary dependencies
+## Repository Content explanation
 
-### Running `app.py`
-
-1. Standalone:  `python app.py`
-2. Run in Docker:  `./run_docker.sh`
-3. Run in Kubernetes:  `./run_kubernetes.sh`
-
-### Kubernetes Steps
-
-* Setup and Configure Docker locally
-* Setup and Configure Kubernetes locally
-* Create Flask app in Container
-* Run via kubectl
+- app.py: A python file that contains the app logic that makes the prediction.
+- Dockerfile: Configuration file to build docker image from an existing application.
+- Makefile: Contains the basic commands to create the virtual environment and lint the scrips.
+- make_prediction.sh: A bash script to call the deployed app and send data to return the prediction.
+- requirements.txt: List of python libraries that need to be installed before using the app.
+- run_docker.sh: A bash script to run the created docker container locally.
+- run_kubernetes.sh: A bash script to create a local kubernetes cluster.
+- upload_docker.sh: A bash script to upload the created docker image to docker hub.
+- .circleci/config.yml: CircleCI configuration file that contains all steps needed to be done automatically.
